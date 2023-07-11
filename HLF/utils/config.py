@@ -3,4 +3,5 @@ EMPTY_SIGN = "_"
 BOAT_SIGN = "O"
 WATER_SIGN = "💦"
 HIT_SIGN = "💥"
+COMP_NAME = "Computer"
 BOAT_SIZES = [3, 2, 1]
