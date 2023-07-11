@@ -65,3 +65,20 @@ def test_place_boat_size_2_board_5():
                          [e, e, e]])
     cond_W = np.all(output_W == new_tab_W)
     assert cond_S & cond_N & cond_E & cond_W
+
+def test_N_W_size_board():
+    tablero_1 = Tablero(3)
+    b = config.BOAT_SIGN
+    e = config.EMPTY_SIGN
+
+    tab_W = tablero_1.place_boat(2, 2, "W", 3)
+    cond_W = (tab_W == np.array([[e, e, e],
+                                 [e, e, e],
+                                 [b, b, b]]))
+    
+    tab_S = tablero_1.place_boat(0, 0, "S", 3)
+    cond_S = (tab_S == np.array([[b, e, e],
+                                 [b, e, e],
+                                 [b, e, e]]))
+    
+    assert np.all(cond_W)&np.all(cond_S)
